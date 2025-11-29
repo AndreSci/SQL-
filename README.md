@@ -2,12 +2,13 @@
 ## Тут информация по базовым вопросам SQL
 
 вопросы по JOIN 
-пояснение LEFT OUTER JOIN (и все остальные JOINы) пишут без OUTER
-INNER JOIN пишут как JOIN
+пояснение LEFT OUTER JOIN (и все остальные JOINы) пишут без OUTER.
+
+- INNER JOIN пишут как JOIN.
 ```bash
 SELECT spendings.*, users.name FROM spendings JOIN users ON users.user_id = spending.id
 ```
-	-- JOIN тут является INNER JOIN
+- JOIN тут является INNER JOIN
 
 self JOIN
 Это когда сравнение происходит в самой таблице (Пример: Таблица сотрудников и кто кому подчиняется там же указано как id этой же таблицы)
