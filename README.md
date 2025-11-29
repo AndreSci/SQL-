@@ -55,3 +55,28 @@ DELETE FROM users WHERE id = 11;
 ```bash
 SELECT * FROM users WHERE id = 11 OR id = 1;
 ```
+
+## АГРЕГАТНЫЕ ФУНКЦИИ 
+
+SUM(price) суммирование данных
+```bash
+SELECT SUM(price) FROM spendings;
+```
+
+так же стоит добавить метод GROUP BY для разделения полей и получения суммы конкретного направления (user)
+```bash
+SELECT SUM(price) FROM spendings GROUP BY user_id;
+```
+тут уже мы получим сумму относящуюся к конкретному пользователю, в результате все пользователи с своей суммой. Получаем финальные данные.
+
+HAVING это метод замена для WHERE(не может принимать агрегатные функции типа sum() ) который может принимать агрегатные функция как условие сравнения.
+HAVING может быть только вконце запроса, после GROUP BY.
+
+результат:
+```bash
+SELECT users.*, SUM(spendings.price) 
+FROM users 
+JOIN spendings ON users.id = spendings.user_id 
+GROUP_BY users.id, spendings.user_id 
+HAVING SUM(spendinsts.price) > 10000;
+```
