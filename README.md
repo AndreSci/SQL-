@@ -1,7 +1,7 @@
 # SQL
 Тут информация по базовым вопросам SQL
 
-вопросы по JOIN ---------------------------------------------------------------------
+вопросы по JOIN 
 пояснение LEFT OUTER JOIN (и все остальные JOINы) пишут без OUTER
 INNER JOIN пишут как JOIN
 
@@ -34,13 +34,21 @@ cross JOIN
 БАЗОВЫЕ ЗАПРОСЫ ----------------------------------------------------------------------
 
 Запрос
+ ```bash
 INSERT INTO users (name, age) VALUES ('name', 22);
+```
 
 Запрос
+```bash
 UPDATE users SET name = 'NewName', age = 33 WHERE id = 11;
+```
 
 Запрос
+```bash
 DELETE FROM users WHERE id = 11;
+```
 
 Запрос
+```bash
 SELECT * FROM users WHERE id = 11 OR id = 1;
+```
